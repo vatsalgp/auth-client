@@ -15,25 +15,28 @@ const Form = props => {
         }
     }
 
-    const renderInput = ({ input, label }) => (
-        <div className="field">
-            <label htmlFor={input.name}>{label}</label>
-            <input {...input} id={input.name} autoComplete="off" />
-        </div>
-    );
-
     return (
         <form onSubmit={props.onSubmit} className="ui form">
-            <Field
-                name="email"
-                label="Enter Email"
-                component={renderInput}
-            />
-            <Field
-                name="password"
-                label="Enter Password"
-                component={renderInput}
-            />
+            <div className="field">
+                <label htmlFor="email">Enter Email</label>
+                <Field
+                    component="input"
+                    name="email"
+                    id="email"
+                    type="text"
+                    autoComplete="off"
+                />
+            </div>
+            <div className="field">
+                <label htmlFor="password">Enter Password</label>
+                <Field
+                    component="input"
+                    name="password"
+                    id="password"
+                    type="password"
+                    autoComplete="off"
+                />
+            </div>
             <button className="ui button primary" >
                 {props.buttonText}
             </button>
