@@ -10,7 +10,7 @@ import Feature from "../components/Feature";
 
 const App = () => {
 	return (
-		<div>
+		<div className="ui container">
 			<BrowserRouter>
 				<Header />
 				<Route path="/" exact component={Welcome} />

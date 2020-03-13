@@ -1,14 +1,8 @@
 import React from "react";
 import requireAuth from "./requireAuth";
 
-class Feature extends React.Component {
-    render() {
-        return (
-            <div>
-                Feature
-            </div>
-        );
-    }
-}
+const Feature = () => (
+    <h1 className="ui header">Protected Feature</h1>
+);
 
 export default requireAuth(Feature);
