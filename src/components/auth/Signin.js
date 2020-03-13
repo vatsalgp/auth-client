@@ -1,12 +1,12 @@
 import React from "react";
 import { reduxForm, Field } from "redux-form";
 import { connect } from "react-redux";
-import { signup } from "../../actions";
+import { signin } from "../../actions";
 
-class Signup extends React.Component {
+class Signin extends React.Component {
 
     onSubmit = formProps => {
-        this.props.signup(formProps, () => {
+        this.props.signin(formProps, () => {
             this.props.history.push("/feature");
         });
     }
@@ -33,7 +33,7 @@ class Signup extends React.Component {
                 <div className="error">
                     {this.props.errorMessage}
                 </div>
-                <button>Sign up</button>
+                <button>Sign in</button>
             </form>
         );
     }
@@ -43,5 +43,5 @@ const mapStateToProps = state => {
     return { errorMessage: state.auth.errorMessage };
 };
 
-const Form = reduxForm({ form: "signup" })(Signup);
-export default connect(mapStateToProps, { signup })(Form);
+const Form = reduxForm({ form: "signin" })(Signin);
+export default connect(mapStateToProps, { signin })(Form);

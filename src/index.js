@@ -7,7 +7,8 @@ import { createStore, applyMiddleware } from "redux";
 import App from './components/App';
 import reducers from "./reducers";
 
-const store = createStore(reducers, applyMiddleware(reduxThunk));
+const initialState = { auth: { authenticated: window.localStorage.getItem("token") } };
+const store = createStore(reducers, initialState, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
     <Provider store={store}>
