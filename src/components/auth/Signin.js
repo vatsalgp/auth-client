@@ -4,21 +4,21 @@ import { connect } from "react-redux";
 import { signin } from "../../actions";
 import Form from "../Form";
 
-class Signin extends React.Component {
+const Signin = props => {
 
-    onSubmit = formProps => {
-        this.props.signin(formProps, () => {
-            this.props.history.push("/feature");
+    const onSubmit = formProps => {
+        props.signin(formProps, () => {
+            props.history.push("/feature");
         });
     }
 
-    render() {
-        return <Form
+    return (
+        <Form
             buttonText="Sign In"
-            onSubmit={this.props.handleSubmit(this.onSubmit)}
-            errorMessage={this.props.errorMessage}
-        />;
-    }
+            onSubmit={props.handleSubmit(onSubmit)}
+            errorMessage={props.errorMessage}
+        />
+    );
 }
 
 const mapStateToProps = state => {

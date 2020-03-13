@@ -9,11 +9,7 @@ class Signout extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                Sorry to see you go !
-            </div>
-        );
+        return <h1 className="ui header">Sorry to see you go !</h1>;
     }
 }
 

@@ -4,21 +4,20 @@ import { connect } from "react-redux";
 import { signup } from "../../actions";
 import Form from "../Form";
 
-class Signup extends React.Component {
+const Signup = props => {
 
-    onSubmit = formProps => {
-        this.props.signup(formProps, () => {
-            this.props.history.push("/feature");
+    const onSubmit = formProps => {
+        props.signup(formProps, () => {
+            props.history.push("/feature");
         });
     }
 
-    render() {
-        return <Form
+    return (
+        <Form
             buttonText="Sign Up"
-            onSubmit={this.props.handleSubmit(this.onSubmit)}
-            errorMessage={this.props.errorMessage}
-        />;
-    }
+            onSubmit={props.handleSubmit(onSubmit)}
+            errorMessage={props.errorMessage}
+        />);
 }
 
 const mapStateToProps = state => {
