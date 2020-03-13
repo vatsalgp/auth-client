@@ -25,15 +25,13 @@ const Form = props => {
     return (
         <form onSubmit={props.onSubmit} className="ui form">
             <Field
-                label="Email"
                 name="email"
-                type="email"
+                label="Enter Email"
                 component={renderInput}
             />
             <Field
-                label="Password"
                 name="password"
-                type="password"
+                label="Enter Password"
                 component={renderInput}
             />
             <button className="ui button primary" >
