@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://localhost:4000"
+    baseURL: "https://us-central1-authenticator-5a724.cloudfunctions.net/app"
 });
